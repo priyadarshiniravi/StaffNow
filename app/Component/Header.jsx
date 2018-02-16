@@ -1,7 +1,7 @@
 import React from 'react';
 import {Collapse, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink} from 'reactstrap';
 
-export default class Dashboard extends React.Component {
+export default class Header extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -26,10 +26,10 @@ export default class Dashboard extends React.Component {
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="collapse navbar-collapse" navbar>
 							<NavItem>
-								<NavLink href=""> Projects </NavLink>
+								<NavLink href=""> Accounts </NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink href=""> Accounts </NavLink>
+								<NavLink href="/Project"> Projects </NavLink>
 							</NavItem>
 							<NavItem>
 								<NavLink href=""> Staffing Request </NavLink>
