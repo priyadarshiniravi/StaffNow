@@ -22,9 +22,9 @@ export default class Dashboard extends React.Component {
 			<div>
 				<Navbar color="dark" dark expand="md">
 					<NavbarBrand href="/">StaffNow</NavbarBrand>
-					<NavbarToggler onClick={this.toggle}/>
+					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isOpen} navbar>
-						<Nav className="ml-auto" navbar>
+						<Nav className="collapse navbar-collapse" navbar>
 							<NavItem>
 								<NavLink href=""> Projects </NavLink>
 							</NavItem>
@@ -34,14 +34,15 @@ export default class Dashboard extends React.Component {
 							<NavItem>
 								<NavLink href=""> Staffing Request </NavLink>
 							</NavItem>
+						</Nav>
+						<Nav className="ml-auto">
 							<NavItem>
-								<NavLink href="">Hello User!</NavLink>
+								<NavLink href="">Hello Priya</NavLink>
 							</NavItem>
 						</Nav>
 					</Collapse>
 				</Navbar>
-				<div className="container">
-				</div>
+				<div className="container" />
 			</div>
 		);
 	}
