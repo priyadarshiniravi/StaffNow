@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import {NavLink, Card, CardTitle, CardText, Col, Row} from 'reactstrap';
+import {Badge, Table, NavLink, Card, Breadcrumb, BreadcrumbItem, Col, Row} from 'reactstrap';
 
 
 export default class Project extends React.Component {
@@ -12,10 +12,25 @@ export default class Project extends React.Component {
 					<Card body>
 						<Row>
 							<Col sm="6">
-								<CardTitle> 6 Projects </CardTitle>
-								<CardText> Project 1 </CardText>
-								<CardText> Project 2 </CardText>
-								<CardText> Project 3 </CardText>
+								<Breadcrumb color="primary">
+									<BreadcrumbItem color="success">Projects <Badge pill>4</Badge></BreadcrumbItem>
+								</Breadcrumb>
+								<Table striped bordered>
+									<tbody>
+										<tr>
+											<td>Project 1</td>
+										</tr>
+										<tr>
+											<td>Project 2</td>
+										</tr>
+										<tr>
+											<td>Project 3</td>
+										</tr>
+										<tr>
+											<td>Project 4</td>
+										</tr>
+									</tbody>
+								</Table>
 							</Col>
 							<Col sm="6">
 								<NavLink href="/new-project">Add Project</NavLink>
