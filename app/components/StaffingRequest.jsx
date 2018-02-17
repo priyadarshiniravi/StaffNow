@@ -1,9 +1,14 @@
 import React from 'react';
 import Header from './Header';
 import {Badge, Table, NavLink, Card, Breadcrumb, BreadcrumbItem, Col, Row} from 'reactstrap';
+import {connect} from 'react-redux';
+import * as actionCreators from '../actions/index';
 
 
-export default class StaffingRequest extends React.Component {
+export class StaffingRequest extends React.Component {
+	componentDidMount() {
+		this.props.getStaffingRequests();
+	}
 	render() {
 		return (
 			<div>
@@ -13,22 +18,19 @@ export default class StaffingRequest extends React.Component {
 						<Row>
 							<Col sm="6">
 								<Breadcrumb color="primary">
-									<BreadcrumbItem color="success">Projects <Badge pill>4</Badge></BreadcrumbItem>
+									<BreadcrumbItem color="success"> Staffing Request
+									<Badge pill>{this.props.elements.length}
+									</Badge>
+									</BreadcrumbItem>
 								</Breadcrumb>
 								<Table striped bordered>
 									<tbody>
-										<tr>
-											<td>StaffingRequest 1</td>
-										</tr>
-										<tr>
-											<td>StaffingRequest 2</td>
-										</tr>
-										<tr>
-											<td>StaffingRequest 3</td>
-										</tr>
-										<tr>
-											<td>StaffingRequest 4</td>
-										</tr>
+										{this.props.elements.map(listValue => (
+											<tr>
+												<td>{listValue.role}</td>
+												<td>{listValue.grade}</td>
+												<td>{listValue.location}</td>
+											</tr>))}
 									</tbody>
 								</Table>
 							</Col>
@@ -42,3 +44,8 @@ export default class StaffingRequest extends React.Component {
 		);
 	}
 }
+
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps, actionCreators)(StaffingRequest);
+

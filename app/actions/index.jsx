@@ -24,3 +24,11 @@ export function getAccounts() {
 	});
 }
 
+export function getStaffingRequests() {
+	return dispatch => axios.get(`${root}//staffingRequest`).then((response) => {
+		dispatch(renderProjects(response.data));
+	}).catch((e) => {
+		console.log(e);
+	});
+}
+
