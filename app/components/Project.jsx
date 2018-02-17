@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import {Badge, Table, NavLink, Card, Breadcrumb, BreadcrumbItem, Col, Row} from 'reactstrap';
+import {Button, Badge, Table, NavLink, Card, Breadcrumb, BreadcrumbItem, Col, Row} from 'reactstrap';
 import {connect} from 'react-redux';
 import * as actionCreators from '../actions/index';
 
@@ -14,7 +14,7 @@ export class Project extends React.Component {
 		return (
 			<div>
 				<Header />
-				<div>{this.props.projects.toString()}</div>
+				<div>{this.props.projects}</div>
 				<div>
 					<Card body>
 						<Row>
@@ -45,6 +45,7 @@ export class Project extends React.Component {
 						</Row>
 					</Card>
 				</div>
+				<Button handleClick={this.props.getProjects} />
 			</div>
 		);
 	}
