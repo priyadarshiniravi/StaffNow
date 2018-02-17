@@ -1,5 +1,5 @@
 const defaultState = {
-	projects: [],
+	projects: [{name: 'hello'}],
 };
 
 const projectReducer = (state = defaultState, action) => {

@@ -14,7 +14,9 @@ export class Project extends React.Component {
 		return (
 			<div>
 				<Header />
-				<div>{this.props.projects}</div>
+				<div>
+					{this.props.projects.map(listValue => <li>{listValue.name}</li>)}
+				</div>
 				<div>
 					<Card body>
 						<Row>
