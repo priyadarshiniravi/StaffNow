@@ -11,6 +11,8 @@ export function renderProjects(projects) {
 export function getProjects() {
 	return dispatch => axios.get('http://localhost:8080/project').then((response) => {
 		dispatch(renderProjects(response.data));
+	}).catch((e) => {
+		console.log(e);
 	});
 }
 

@@ -15,29 +15,18 @@ export class Project extends React.Component {
 			<div>
 				<Header />
 				<div>
-					{this.props.projects.map(listValue => <li>{listValue.name}</li>)}
-				</div>
-				<div>
 					<Card body>
 						<Row>
 							<Col sm="6">
 								<Breadcrumb color="primary">
-									<BreadcrumbItem color="success">Projects <Badge pill>4</Badge></BreadcrumbItem>
+									<BreadcrumbItem color="success">Projects
+									<Badge pill>{this.props.projects.length}
+									</Badge>
+									</BreadcrumbItem>
 								</Breadcrumb>
 								<Table striped bordered>
 									<tbody>
-										<tr>
-											<td>Project 1</td>
-										</tr>
-										<tr>
-											<td>Project 2</td>
-										</tr>
-										<tr>
-											<td>Project 3</td>
-										</tr>
-										<tr>
-											<td>Project 4</td>
-										</tr>
+										{this.props.projects.map(listValue => <tr><td>{listValue.name}</td></tr>)}
 									</tbody>
 								</Table>
 							</Col>
@@ -47,7 +36,6 @@ export class Project extends React.Component {
 						</Row>
 					</Card>
 				</div>
-				<Button handleClick={this.props.getProjects} />
 			</div>
 		);
 	}
