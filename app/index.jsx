@@ -12,6 +12,7 @@ import Project from './components/Project';
 import ProjectForm from './components/ProjectForm';
 import Account from './components/Account';
 import StaffingRequest from './components/StaffingRequest';
+import AccountForm from './components/AccountForm';
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
@@ -24,6 +25,7 @@ ReactDOM.render(
 				<Route path="/account" component={Account} />
 				<Route path="/staffing_request" component={StaffingRequest} />
 				<Route path="/new-project" component={ProjectForm} />
+				<Route path="/new-account" component={AccountForm} />
 			</div>
 		</BrowserRouter>
 	</Provider>,

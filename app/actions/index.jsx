@@ -8,27 +8,23 @@ export function renderProjects(elements) {
 	};
 }
 
-export function getProjects() {
-	return dispatch => axios.get(`${root}/project`).then((response) => {
+function getAllFrom(url) {
+	return dispatch => axios.get(`${root}${url}`).then((response) => {
 		dispatch(renderProjects(response.data));
 	}).catch((e) => {
 		console.log(e);
 	});
+}
+
+export function getProjects() {
+	return getAllFrom('/project');
 }
 
 export function getAccounts() {
-	return dispatch => axios.get(`${root}/account`).then((response) => {
-		dispatch(renderProjects(response.data));
-	}).catch((e) => {
-		console.log(e);
-	});
+	return getAllFrom('/account');
 }
 
 export function getStaffingRequests() {
-	return dispatch => axios.get(`${root}//staffingRequest`).then((response) => {
-		dispatch(renderProjects(response.data));
-	}).catch((e) => {
-		console.log(e);
-	});
+	return getAllFrom('/staffingRequest');
 }
 

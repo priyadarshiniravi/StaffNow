@@ -35,7 +35,7 @@ export class StaffingRequest extends React.Component {
 								</Table>
 							</Col>
 							<Col sm="6">
-								<NavLink href="/new-project">Add StaffingRequest</NavLink>
+								<NavLink href="/new-staff-request">Add StaffingRequest</NavLink>
 							</Col>
 						</Row>
 					</Card>

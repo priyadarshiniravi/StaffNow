@@ -1,7 +1,8 @@
 import React from 'react';
-import Header from './Header';
-import {Button, Badge, Table, NavLink, Card, Breadcrumb, BreadcrumbItem, Col, Row} from 'reactstrap';
 import {connect} from 'react-redux';
+
+import Header from './Header';
+import {Badge, Table, NavLink, Card, Breadcrumb, BreadcrumbItem, Col, Row} from 'reactstrap';
 import * as actionCreators from '../actions/index';
 
 
