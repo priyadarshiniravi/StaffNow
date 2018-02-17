@@ -1,15 +1,23 @@
 import axios from 'axios';
 
-
-export function renderProjects(projects) {
+const root = 'http://localhost:8080';
+export function renderProjects(elements) {
 	return {
-		type: 'RENDER_PROJECTS',
-		projects,
+		type: 'RENDER_ITEMS',
+		elements,
 	};
 }
 
 export function getProjects() {
-	return dispatch => axios.get('http://localhost:8080/project').then((response) => {
+	return dispatch => axios.get(`${root}/project`).then((response) => {
+		dispatch(renderProjects(response.data));
+	}).catch((e) => {
+		console.log(e);
+	});
+}
+
+export function getAccounts() {
+	return dispatch => axios.get(`${root}/account`).then((response) => {
 		dispatch(renderProjects(response.data));
 	}).catch((e) => {
 		console.log(e);

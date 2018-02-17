@@ -1,12 +1,12 @@
 const defaultState = {
-	projects: [{name: 'hello'}],
+	elements: [{name: 'hello'}],
 };
 
 const projectReducer = (state = defaultState, action) => {
 	switch (action.type) {
-	case 'RENDER_PROJECTS':
+	case 'RENDER_ITEMS':
 		return Object.assign({}, state, {
-			projects: action.projects,
+			elements: action.elements,
 		});
 	default:
 		return state;

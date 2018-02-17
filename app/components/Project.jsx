@@ -20,13 +20,13 @@ export class Project extends React.Component {
 							<Col sm="6">
 								<Breadcrumb color="primary">
 									<BreadcrumbItem color="success">Projects
-									<Badge pill>{this.props.projects.length}
+									<Badge pill>{this.props.elements.length}
 									</Badge>
 									</BreadcrumbItem>
 								</Breadcrumb>
 								<Table striped bordered>
 									<tbody>
-										{this.props.projects.map(listValue => <tr><td>{listValue.name}</td></tr>)}
+										{this.props.elements.map(listValue => <tr><td>{listValue.name}</td></tr>)}
 									</tbody>
 								</Table>
 							</Col>
