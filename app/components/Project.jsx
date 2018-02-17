@@ -1,13 +1,20 @@
 import React from 'react';
 import Header from './Header';
 import {Badge, Table, NavLink, Card, Breadcrumb, BreadcrumbItem, Col, Row} from 'reactstrap';
+import {connect} from 'react-redux';
+import * as actionCreators from '../actions/index';
 
 
-export default class Project extends React.Component {
+export class Project extends React.Component {
+	componentDidMount() {
+		this.props.getProjects();
+	}
+
 	render() {
 		return (
 			<div>
 				<Header />
+				<div>{this.props.projects.toString()}</div>
 				<div>
 					<Card body>
 						<Row>
@@ -42,3 +49,7 @@ export default class Project extends React.Component {
 		);
 	}
 }
+
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps, actionCreators)(Project);
