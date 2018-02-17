@@ -30,6 +30,7 @@ export class StaffingRequest extends React.Component {
 												<td>{listValue.role}</td>
 												<td>{listValue.grade}</td>
 												<td>{listValue.location}</td>
+												<td>{`${listValue.skillSet}`}</td>
 											</tr>))}
 									</tbody>
 								</Table>
